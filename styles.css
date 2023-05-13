@@ -1,0 +1,129 @@
+
+
+
+
+body {
+  display: flex;
+  padding: 81px 0 81px 0;
+  background-image: url(img/bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.illustration {
+  margin-top: 86px;
+  margin-bottom: 86px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.form-container {
+  background-color: #F3F3F3;
+  border-radius: 20px;
+  width: 620px;
+  height: 820px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  margin-top: 60px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 42px;
+  color: #7875DE;
+}
+.input-form {
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  margin-left: 70px;
+  margin-top: 30px;
+}
+input {
+  padding-left: 50px;
+  width: 430px;
+  height: 63px;
+  border: 1.7px solid #535353;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: #A8A8A8;
+}
+input[type=text]:read-write {
+  color: #7875DE;
+}
+input[type=text]::selection {
+  background-color: #7875DE;
+  color: #ffffff;
+}
+input[type=password]:read-write {
+  color: #7875DE;
+}
+input[type=password]::selection {
+  background-color: #7875DE;
+  color: #ffffff;
+}
+input[type=email]:read-write {
+  color: #7875DE;
+}
+input[type=email]::selection {
+  background-color: #7875DE;
+  color: #ffffff;
+}
+.username{
+  background: url("img/user.png") no-repeat left;
+  background-size: 30px;
+  background-position: 10px;
+}
+.email{
+  background: url("img/secure-letter.png") no-repeat left;
+  background-size: 30px;
+  background-position: 10px;
+}
+.password{
+  background: url("img/lock.png") no-repeat left;
+  background-size: 30px;
+  background-position: 10px;
+}
+.confirm{
+  background: url("img/password.png") no-repeat left;
+  background-size: 30px;
+  background-position: 10px;
+}
+.submit-btn {
+  cursor: pointer;
+  margin-left: 105px;
+  margin-top: 30px;
+  padding: 0px;
+  width: 270px;
+  height: 80px;
+  border: none;
+  background: #7875DE;
+  border-radius: 15px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #FFFFFF;
+}
+.submit-btn:hover {
+  transition: 0.8s;
+  border: 2px solid #7875DE;
+  background-color: #F3F3F3;
+  color: #7875DE;
+}
+a {
+  margin-top: 30px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #A8A8A8;
+}

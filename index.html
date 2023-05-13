@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        padding: 81px 0 81px 0;
+        background-image: url(img/bg.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .illustration {
+        margin-top: 86px;
+        margin-bottom: 86px;
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+      .form-container {
+        background-color: #f3f3f3;
+        border-radius: 20px;
+        width: 620px;
+        height: 820px;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+      }
+      h1 {
+        margin-top: 60px;
+        text-align: center;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 42px;
+        color: #7875de;
+      }
+      .input-form {
+        display: flex;
+        flex-direction: column;
+        width: 480px;
+        margin-left: 70px;
+        margin-top: 30px;
+      }
+      input {
+        padding-left: 50px;
+        width: 430px;
+        height: 63px;
+        border: 1.7px solid #535353;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+        color: #a8a8a8;
+      }
+      input[type="text"]:read-write {
+        color: #7875de;
+      }
+      input[type="text"]::selection {
+        background-color: #7875de;
+        color: #ffffff;
+      }
+      input[type="password"]:read-write {
+        color: #7875de;
+      }
+      input[type="password"]::selection {
+        background-color: #7875de;
+        color: #ffffff;
+      }
+      input[type="email"]:read-write {
+        color: #7875de;
+      }
+      input[type="email"]::selection {
+        background-color: #7875de;
+        color: #ffffff;
+      }
+      .username {
+        background: url("img/user.png") no-repeat left;
+        background-size: 30px;
+        background-position: 10px;
+      }
+      .email {
+        background: url("img/secure-letter.png") no-repeat left;
+        background-size: 30px;
+        background-position: 10px;
+      }
+      .password {
+        background: url("img/lock.png") no-repeat left;
+        background-size: 30px;
+        background-position: 10px;
+      }
+      .confirm {
+        background: url("img/password.png") no-repeat left;
+        background-size: 30px;
+        background-position: 10px;
+      }
+      .submit-btn {
+        cursor: pointer;
+        margin-left: 105px;
+        margin-top: 30px;
+        padding: 0px;
+        width: 270px;
+        height: 80px;
+        border: none;
+        background: #7875de;
+        border-radius: 15px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
+        color: #ffffff;
+      }
+      .submit-btn:hover {
+        border: 2px solid #7875de;
+        background-color: #f3f3f3;
+        color: #7875de;
+      }
+      a {
+        margin-top: 30px;
+        text-align: center;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #a8a8a8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="illustration">
+      <img
+        src="img/web-man.png"
+        alt=""
+        class="illustr"
+        style="
+          max-width: 648px;
+          min-width: 348px;
+          max-height: 648px;
+          min-height: 448px;
+        "
+      />
+    </div>
+
+    <div class="form-container">
+      <h1>Sign up</h1>
+
+      <form action="" class="input-form" id="form">
+        <input
+          id="username"
+          type="text"
+          class="username"
+          src="/img/user.png"
+          placeholder="Username"
+        />
+        <input id="email" type="email" class="email" placeholder="Email" />
+        <input
+          id="password"
+          type="password"
+          class="password"
+          placeholder="Password"
+        />
+        <input
+          id="confirm"
+          type="password"
+          class="confirm"
+          placeholder="Confirm password"
+        />
+        <input id="btn" type="submit" class="submit-btn" value="SIGN UP" />
+        <a href="./login.html" class="have-account">Already have an account?</a>
+      </form>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("form");
+        form.addEventListener("submit", formSend);
+        async function formSend(e) {
+          e.preventDefault();
+          let inpEmail = document.querySelector("#email");
+          let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          if (
+            username.value === "" ||
+            username.value.length < 3 ||
+            username.value.length > 25
+          ) {
+            console.log("enter correct username");
+            username.style.boxShadow = "0 0 15px tomato";
+          } else {
+            console.log(`Hello: ${username.value}`);
+            username.style.boxShadow = "none";
+          }
+          if (!reg.test(inpEmail.value)) {
+            console.log("incorrect email");
+            email.style.boxShadow = "0 0 15px tomato";
+          } else {
+            console.log("correct email!!!!");
+            email.style.boxShadow = "none";
+          }
+
+          let password = document.getElementById("password");
+          let confirm = document.getElementById("confirm");
+
+          var lowerCaseLetters = /[a-z]/g;
+          if (password.value.match(lowerCaseLetters)) {
+            console.log("yes");
+            // password.classList.remove("error");
+            password.style.boxShadow = "none";
+          } else {
+            console.log("error");
+            // password.classList.add("error");
+            password.style.boxShadow = "0 0 15px red";
+
+            return;
+          }
+
+          var upperCaseLetters = /[A-Z]/g;
+          if (password.value.match(upperCaseLetters)) {
+            console.log("yes");
+            // password.classList.remove("_error");
+            password.style.boxShadow = "none";
+          } else {
+            console.log("error");
+            // password.classList.add("error");
+            password.style.boxShadow = "0 0 15px red";
+
+            return;
+          }
+
+          var numbers = /[0-9]/g;
+          if (password.value.match(numbers)) {
+            console.log("yes");
+            // password.classList.remove("_error");
+            password.style.boxShadow = "none";
+          } else {
+            console.log("error");
+            // password.classList.add("error");
+            password.style.boxShadow = "0 0 15px red";
+
+            return;
+          }
+
+          let symbols = /[!@#$%^&*]/;
+          if (password.value.match(symbols)) {
+            console.log("yes");
+            // password.classList.remove("_error");
+            password.style.boxShadow = "none";
+          } else {
+            console.log("error");
+            // password.classList.add("error");
+            password.style.boxShadow = "0 0 15px red";
+
+            return;
+          }
+
+          if (password.value.length >= 8) {
+            console.log("yes");
+            // password.classList.remove("_error");
+            password.style.boxShadow = "none";
+          } else {
+            console.log("error");
+            // password.classList.add("error");
+            password.style.boxShadow = "0 0 15px red";
+
+            return;
+          }
+
+          if (password.value != confirm.value) {
+            console.log("password no confirm");
+            confirm.style.boxShadow = "0 0 15px red";
+          } else {
+            console.log("password is confirm");
+            confirm.style.boxShadow = "none";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<!-- bg.png  -  background -->
